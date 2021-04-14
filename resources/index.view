@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="clock" class="background">
+
+    <defs>
+        <symbol id="voice">
+            <rect width="30" height="6" fill="red" />
+            <rect x="53" width="30" height="6" fill="red" />
+            <rect x="106" width="30" height="6" fill="red" />
+        </symbol>
+        <symbol id="voiceSymbol">
+          <image id="animateElement" href="voiceOverlay.png">
+                <animate attributeName="opacity" begin="enable" from="0.3" to="0.9" dur="0.7" final="restore" repeatCount="indefinite" />
+          </image>
+        </symbol>
+
+    </defs>
+
+    <g id="primaryDisplay">
+        <image id="ST" class="sideButton" x="10" y="60" width="72" height="36" href="Steps.png" pointer-events="visible" />
+        <image id="FL" class="sideButton" x="10" y="120" width="72" height="36" href="Floors.png" pointer-events="visible" />
+        <image id="ZO" class="sideButton" x="10" y="180" width="72" height="36" href="Zones.png" pointer-events="visible" />
+        <image id="WE" class="sideButton" x="10" y="240" width="72" height="36" href="Weather.png" pointer-events="visible" />
+        <image id="DI" class="sideButton" x="250" y="60" width="72" height="36" href="Distance.png" pointer-events="visible" />
+        <image id="CA" class="sideButton" x="250" y="120" width="72" height="36" href="Calories.png" pointer-events="visible" />
+        <image id="HR" class="sideButton" x="250" y="180" width="72" height="36" href="HeartRate.png" pointer-events="visible" />
+        <image id="BA" class="sideButton" x="250" y="240" width="72" height="36" href="Battery.png" pointer-events="visible" />
+
+        <g id="pursuit" pointer-events="visible">
+            <g>
+                <rect class="bottomButton" x="100" y="180" width="136" height="36" fill="orange" opacity="0.6" rx="10" />
+                <text id="date" text-anchor="middle" text-length="8" x="168" y="208" fill="black" font-size="28">12/12/2022</text>
+            </g>
+            <g>
+                <rect class="bottomButton" x="100" y="230" width="136" height="36" fill="orange" rx="10" />
+                <text id="time" text-anchor="middle" text-length="8" x="168" y="259" fill="black" font-size="34" font-family="System-Bold">12:34:56</text>
+            </g>
+            <g>
+                <rect class="bottomButton" x="100" y="280" width="136" height="36" fill="lightblue" opacity="0.7" rx="10" />
+                <text id="goal" text-anchor="middle" text-length="10" x="168" y="308" fill="black" font-size="32">00000</text>
+            </g>
+        </g>
+
+        <g>
+            <use href="#voice" x="100" y="10" />
+            <use href="#voice" x="100" y="20" />
+            <use href="#voice" x="100" y="30" />
+            <use href="#voice" x="100" y="40" />
+            <use href="#voice" x="100" y="50" />
+            <use href="#voice" x="100" y="60" />
+            <use href="#voice" x="100" y="70" />
+            <use href="#voice" x="100" y="80" />
+            <use href="#voice" x="100" y="90" />
+            <use href="#voice" x="100" y="100" />
+            <use href="#voice" x="100" y="110" />
+            <use href="#voice" x="100" y="120" />
+            <use href="#voice" x="100" y="130" />
+            <use href="#voice" x="100" y="140" />
+            <use href="#voice" x="100" y="150" />
+            <use href="#voice" x="100" y="160" />
+            <use id="voiceAnimate" href="#voiceSymbol" pointer-events="visible" x="100" y="10" width="136" height="158" />
+        </g>
+    </g>
+
+    <g id="altDisplay" pointer-events="visible">
+        <g>
+            <text id="date2" text-anchor="middle" text-length="10" x="168" y="120" fill="white" font-size="32">12/12/22</text>
+        </g>
+        <g>
+            <text id="time2" text-anchor="middle" text-length="10" x="168" y="70" fill="white" font-size="44" font-family="System-Bold">12:34:56</text>
+        </g>
+        <g>
+            <text id="temp" text-anchor="middle" text-length="10" x="168" y="300" fill="white" font-size="40">--</text>
+        </g>
+
+        <g id="lightDisplay">
+            <rect class="wew" x="26%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="32%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="38%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="44%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="50%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="56%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="62%" y="60%" width="19" height="3%" fill="red" />
+            <rect class="wew" x="68%" y="60%" width="19" height="3%" fill="red" />
+        </g>
+    </g>
+
+</svg>

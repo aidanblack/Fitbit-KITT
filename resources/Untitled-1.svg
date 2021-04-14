@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="clock" class="background">
+
+    <defs>
+        <symbol id="voice">
+            <rect x="120" width="20" height="5" fill="red" />
+            <rect x="158" width="20" height="5" fill="red" />
+            <rect x="196" width="20" height="5" fill="red" />
+        </symbol>
+        <symbol id="voiceAnimate">
+          <image x="120" y="58" width="98" height="127" href="voiceOverlay.png">
+                <animate id="animateElement" attributeName="opacity" begin="enable" from="0.3" to="0.9" dur="0.7" final="restore" repeatCount="indefinite" />
+          </image>
+        </symbol>
+
+    </defs>
+
+    <g transform="translate(-33,-50) scale(1.2,1.2)">
+        <image id="ST" class="sideButton" x="35" y="100" width="60" height="30" href="Steps.png" pointer-events="visible" />
+        <image id="FL" class="sideButton" x="35" y="150" width="60" height="30" href="Floors.png" pointer-events="visible" />
+        <image id="ZO" class="sideButton" x="35" y="200" width="60" height="30" href="Zones.png" pointer-events="visible" />
+        <image id="WE" class="sideButton" x="35" y="250" width="60" height="30" href="Weather.png" pointer-events="visible" />
+        <image id="DI" class="sideButton" x="241" y="100" width="60" height="30" href="Distance.png" pointer-events="visible" />
+        <image id="CA" class="sideButton" x="241" y="150" width="60" height="30" href="Calories.png" pointer-events="visible" />
+        <image id="HR" class="sideButton" x="241" y="200" width="60" height="30" href="HeartRate.png" pointer-events="visible" />
+        <image id="BA" class="sideButton" x="241" y="250" width="60" height="30" href="Battery.png" pointer-events="visible" />
+
+        <g>
+            <rect class="bottomButton" x="120" y="195" width="94" height="30" fill="orange" opacity="0.6" rx="10" />
+            <text id="date" text-anchor="middle" text-length="20" x="168" y="216" fill="black" font-size="18">12/12/2022</text>
+        </g>
+        <g>
+            <rect class="bottomButton" x="120" y="235" width="94" height="30" fill="orange" rx="10" />
+            <text id="time" text-anchor="middle" text-length="20" x="168" y="257" fill="black" font-size="20">12:34:56</text>
+        </g>
+        <g>
+            <rect class="bottomButton" x="120" y="275" width="94" height="30" fill="lightblue" opacity="0.7" rx="10" />
+            <text id="goal" text-anchor="middle" text-length="20" x="168" y="296" fill="black" font-size="22">00000</text>
+        </g>
+
+        <use href="#voice" y="58" />
+        <use href="#voice" y="66" />
+        <use href="#voice" y="74" />
+        <use href="#voice" y="82" />
+        <use href="#voice" y="90" />
+        <use href="#voice" y="98" />
+        <use href="#voice" y="106" />
+        <use href="#voice" y="114" />
+        <use href="#voice" y="122" />
+        <use href="#voice" y="130" />
+        <use href="#voice" y="138" />
+        <use href="#voice" y="146" />
+        <use href="#voice" y="154" />
+        <use href="#voice" y="162" />
+        <use href="#voice" y="170" />
+        <use href="#voice" y="178" />
+        <use id="voiceAnimate" href="#voiceAnimate" pointer-events="visible" />
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+.background {
+  viewport-fill: black;
+}
+
+.sideButton {
+  opacity: 0.5;
+  font-weight: bold;
+}
+
+.bottomButton {
+}
+
+#altDisplay {
+  visibility: hidden;
+}
