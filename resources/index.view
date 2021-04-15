@@ -15,6 +15,8 @@
     </defs>
 
     <g id="primaryDisplay">
+        <image x="0" y="0" width="100%" height="100%" href="Overlay.png" />
+
         <image id="ST" class="sideButton" x="15" y="70" width="58" height="36" href="Steps.png" pointer-events="visible" />
         <image id="FL" class="sideButton" x="15" y="130" width="58" height="36" href="Floors.png" pointer-events="visible" />
         <image id="ZO" class="sideButton" x="15" y="190" width="58" height="36" href="Zones.png" pointer-events="visible" />
@@ -26,7 +28,7 @@
 
         <g id="pursuit" pointer-events="visible">
             <g>
-                <image class="bottomButton" x="100" y="190" width="136" height="36" opacity="0.7" href="Cruise.png" />
+                <rect class="bottomButton" x="100" y="190" width="136" height="36" opacity="0.7" fill="#FFDE38" />
                 <use href="#fitfont" id="date" x="168" y="211">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -39,7 +41,7 @@
                 </use>
             </g>
             <g>
-                <image class="bottomButton" x="100" y="235" width="136" height="36" href="Cruise.png" />
+                <rect class="bottomButton" x="100" y="235" width="136" height="36" href="Cruise.png" fill="#FFDE38" />
                 <use href="#fitfont" id="time" x="168" y="255">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -52,7 +54,7 @@
                 </use>
             </g>
             <g>
-                <image class="bottomButton" x="100" y="280" width="136" height="36" opacity="0.7" href="Pursuit.png" />
+                <rect class="bottomButton" x="100" y="280" width="136" height="36" opacity="0.7" href="Pursuit.png" fill="#ADE2FF" />
                 <use href="#fitfont" id="goal" x="168" y="301">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
