@@ -2,9 +2,9 @@
 
     <defs>
         <symbol id="voice">
-            <rect width="30" height="6" fill="red" />
-            <rect x="53" width="30" height="6" fill="red" />
-            <rect x="106" width="30" height="6" fill="red" />
+            <rect x="12" width="24" height="6" fill="red" />
+            <rect x="56" width="24" height="6" fill="red" />
+            <rect x="100" width="24" height="6" fill="red" />
         </symbol>
         <symbol id="voiceSymbol">
           <image id="animateElement" href="voiceOverlay.png">
@@ -27,15 +27,42 @@
         <g id="pursuit" pointer-events="visible">
             <g>
                 <rect class="bottomButton" x="100" y="180" width="136" height="36" fill="orange" opacity="0.6" rx="10" />
-                <text id="date" text-anchor="middle" text-length="8" x="168" y="208" fill="black" font-size="28">12/12/2022</text>
+                <use href="#fitfont" id="date" x="168" y="201">
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                </use>
             </g>
             <g>
                 <rect class="bottomButton" x="100" y="230" width="136" height="36" fill="orange" rx="10" />
-                <text id="time" text-anchor="middle" text-length="8" x="168" y="259" fill="black" font-size="34" font-family="System-Bold">12:34:56</text>
+                <use href="#fitfont" id="time" x="168" y="250">
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                </use>
             </g>
             <g>
                 <rect class="bottomButton" x="100" y="280" width="136" height="36" fill="lightblue" opacity="0.7" rx="10" />
-                <text id="goal" text-anchor="middle" text-length="10" x="168" y="308" fill="black" font-size="32">00000</text>
+                <use href="#fitfont" id="goal" x="168" y="301">
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                    <use href="#fitfont-char"/>
+                </use>
             </g>
         </g>
 
@@ -62,13 +89,42 @@
 
     <g id="altDisplay" pointer-events="visible">
         <g>
-            <text id="date2" text-anchor="middle" text-length="10" x="168" y="120" fill="white" font-size="32">12/12/22</text>
+            <use href="#fitfont" id="date2" x="168" y="130" fill="white">
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+            </use>
         </g>
         <g>
-            <text id="time2" text-anchor="middle" text-length="10" x="168" y="70" fill="white" font-size="44" font-family="System-Bold">12:34:56</text>
+            <use href="#fitfont" id="time2" x="168" y="80" fill="white">
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+            </use>
         </g>
         <g>
-            <text id="temp" text-anchor="middle" text-length="10" x="168" y="300" fill="white" font-size="40">--</text>
+            <use href="#fitfont" id="temp" x="168" y="280" fill="white">
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+                <use href="#fitfont-char"/>
+            </use>
         </g>
 
         <g id="lightDisplay">

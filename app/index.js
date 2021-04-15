@@ -10,6 +10,7 @@ import { BodyPresenceSensor } from "body-presence";
 import { today } from "user-activity";
 import { battery } from "power";
 import * as weather from 'fitbit-weather/app';
+import { FitFont } from 'fitfont';
 
 const settings;
 const primaryDisplay = document.getElementById("primaryDisplay");
@@ -19,12 +20,60 @@ const hrm;
 const voiceAnimate = document.getElementById("voiceAnimate");
 const lightDisplay = document.getElementById("lightDisplay");
 const pursuit = document.getElementById("pursuit");
-const timeDisplay = document.getElementById("time");
-const dateDisplay = document.getElementById("date");
-const timeDisplayAlt = document.getElementById("time2");
-const dateDisplayAlt = document.getElementById("date2");
-const weatherAlt = document.getElementById("temp");
-const dynamicDisplay = document.getElementById("goal");
+const timeDisplay = new FitFont({ 
+  id:'time',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'EuroStile_32',   // name of the generated font folder
+
+  // Optional
+  halign: 'middle',            // horizontal alignment : start / middle / end
+  valign: 'middle',         // vertical alignment   : baseline / top / middle / bottom
+  letterspacing: -1            // letterspacing...
+});
+const dateDisplay = new FitFont({ 
+  id:'date',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'EuroStyle_30', // name of the generated font folder
+
+  // Optional
+  halign: 'middle',            // horizontal alignment : start / middle / end
+  valign: 'middle',         // vertical alignment   : baseline / top / middle / bottom
+  letterspacing: 1            // letterspacing...
+});
+const timeDisplayAlt = new FitFont({ 
+  id:'time2',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'EuroStile_44',   // name of the generated font folder
+
+  // Optional
+  halign: 'middle',            // horizontal alignment : start / middle / end
+  valign: 'middle',         // vertical alignment   : baseline / top / middle / bottom
+  letterspacing: -1            // letterspacing...
+});
+const dateDisplayAlt = new FitFont({ 
+  id:'date2',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'EuroStyle_32', // name of the generated font folder
+
+  // Optional
+  halign: 'middle',            // horizontal alignment : start / middle / end
+  valign: 'middle',         // vertical alignment   : baseline / top / middle / bottom
+  letterspacing: 1            // letterspacing...
+});
+const weatherAlt = new FitFont({ 
+  id:'temp',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'EuroStyle_40', // name of the generated font folder
+
+  // Optional
+  halign: 'middle',            // horizontal alignment : start / middle / end
+  valign: 'middle',         // vertical alignment   : baseline / top / middle / bottom
+  letterspacing: 1            // letterspacing...
+});
+const dynamicDisplay = new FitFont({ 
+  id:'goal',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'EuroStyle_34',   // name of the generated font folder
+
+  // Optional
+  halign: 'middle',            // horizontal alignment : start / middle / end
+  valign: 'middle',         // vertical alignment   : baseline / top / middle / bottom
+  letterspacing: 1            // letterspacing...
+});
 var temperature = 0;
 var statDisplay = "BA";
 
@@ -69,17 +118,17 @@ function updateDisplay() {
       temperature = Math.round(weather.temperatureC);
     }
   }).catch(error => console.log(JSON.stringify(error)));
-  weatherAlt.text = `${temperature}°`;
+  weatherAlt.text = `${temperature}*`;
   if (statDisplay == "WE") {
-    dynamicDisplay.text = `${temperature}°`;
+    dynamicDisplay.text = `${temperature}*`;
   }
   else if (me.permissions.granted("access_activity")) {
     if (statDisplay == "ST") dynamicDisplay.text = `${today.adjusted.steps}`;
-    if (statDisplay == "DI") dynamicDisplay.text = `${(today.adjusted.distance * 0.0006213712).toFixed(2)}`;
+    if (statDisplay == "DI") dynamicDisplay.text = `${(today.adjusted.distance * 0.0006213712).toFixed(2)}mi`;
     if (statDisplay == "FL") dynamicDisplay.text = `${today.adjusted.elevationGain}`;
     if (statDisplay == "CA") dynamicDisplay.text = `${today.adjusted.calories}`;
-    if (statDisplay == "ZO") dynamicDisplay.text = `${today.adjusted.activeZoneMinutes.total}`;
-    if (statDisplay == "HR") dynamicDisplay.text = `${hrm.heartRate}`;
+    if (statDisplay == "ZO") dynamicDisplay.text = `${today.adjusted.activeZoneMinutes.total}min`;
+    if (statDisplay == "HR") dynamicDisplay.text = `${hrm.heartRate}bpm`;
   }
   else statDisplay = "BA";
   if (statDisplay == "BA") dynamicDisplay.text = `${battery.chargeLevel}%`;
@@ -134,7 +183,7 @@ clock.ontick = (evt) => {
   let mins = util.zeroPad(now.getMinutes());
   let secs = util.zeroPad(now.getSeconds());
   timeDisplay.text = `${hours}:${mins}:${secs}`;
-  dateDisplay.text = `${now.getMonth() + 1}/${now.getDate()}/${now.getYear() + 1900}`;
+  dateDisplay.text = `${now.getMonth() + 1}/${now.getDate()}/${now.getYear() - 100}`;
   timeDisplayAlt.text = `${hours}:${mins}:${secs}`;
   dateDisplayAlt.text = `${now.getMonth() + 1}/${now.getDate()}/${now.getYear() + 1900}`;
 
