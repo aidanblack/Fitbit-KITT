@@ -15,19 +15,19 @@
     </defs>
 
     <g id="primaryDisplay">
-        <image id="ST" class="sideButton" x="10" y="60" width="72" height="36" href="Steps.png" pointer-events="visible" />
-        <image id="FL" class="sideButton" x="10" y="120" width="72" height="36" href="Floors.png" pointer-events="visible" />
-        <image id="ZO" class="sideButton" x="10" y="180" width="72" height="36" href="Zones.png" pointer-events="visible" />
-        <image id="WE" class="sideButton" x="10" y="240" width="72" height="36" href="Weather.png" pointer-events="visible" />
-        <image id="DI" class="sideButton" x="250" y="60" width="72" height="36" href="Distance.png" pointer-events="visible" />
-        <image id="CA" class="sideButton" x="250" y="120" width="72" height="36" href="Calories.png" pointer-events="visible" />
-        <image id="HR" class="sideButton" x="250" y="180" width="72" height="36" href="HeartRate.png" pointer-events="visible" />
-        <image id="BA" class="sideButton" x="250" y="240" width="72" height="36" href="Battery.png" pointer-events="visible" />
+        <image id="ST" class="sideButton" x="15" y="70" width="58" height="36" href="Steps.png" pointer-events="visible" />
+        <image id="FL" class="sideButton" x="15" y="130" width="58" height="36" href="Floors.png" pointer-events="visible" />
+        <image id="ZO" class="sideButton" x="15" y="190" width="58" height="36" href="Zones.png" pointer-events="visible" />
+        <image id="WE" class="sideButton" x="15" y="250" width="58" height="36" href="Weather.png" pointer-events="visible" />
+        <image id="DI" class="sideButton" x="259" y="70" width="58" height="36" href="Distance.png" pointer-events="visible" />
+        <image id="CA" class="sideButton" x="259" y="130" width="58" height="36" href="Calories.png" pointer-events="visible" />
+        <image id="HR" class="sideButton" x="259" y="190" width="58" height="36" href="HeartRate.png" pointer-events="visible" />
+        <image id="BA" class="sideButton" x="259" y="250" width="58" height="36" href="Battery.png" pointer-events="visible" />
 
         <g id="pursuit" pointer-events="visible">
             <g>
-                <rect class="bottomButton" x="100" y="180" width="136" height="36" fill="orange" opacity="0.6" rx="10" />
-                <use href="#fitfont" id="date" x="168" y="201">
+                <image class="bottomButton" x="100" y="195" width="136" height="36" opacity="0.7" href="Cruise.png" />
+                <use href="#fitfont" id="date" x="168" y="216">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -39,8 +39,8 @@
                 </use>
             </g>
             <g>
-                <rect class="bottomButton" x="100" y="230" width="136" height="36" fill="orange" rx="10" />
-                <use href="#fitfont" id="time" x="168" y="250">
+                <image class="bottomButton" x="100" y="240" width="136" height="36" href="Cruise.png" />
+                <use href="#fitfont" id="time" x="168" y="260">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -52,8 +52,8 @@
                 </use>
             </g>
             <g>
-                <rect class="bottomButton" x="100" y="280" width="136" height="36" fill="lightblue" opacity="0.7" rx="10" />
-                <use href="#fitfont" id="goal" x="168" y="301">
+                <image class="bottomButton" x="100" y="285" width="136" height="36" opacity="0.7" href="Pursuit.png" />
+                <use href="#fitfont" id="goal" x="168" y="306">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -66,7 +66,7 @@
             </g>
         </g>
 
-        <g>
+        <g transform="translate(8,10) scale(0.95,0.95)">
             <use href="#voice" x="100" y="10" />
             <use href="#voice" x="100" y="20" />
             <use href="#voice" x="100" y="30" />
