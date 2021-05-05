@@ -17,8 +17,10 @@ const primaryDisplay = document.getElementById("primaryDisplay");
 const altDisplay = document.getElementById("altDisplay");
 const sideButtons = document.getElementsByClassName("sideButton");
 const hrm;
+const body = null;
+const voiceBox = document.getElementById("voiceBox");
 const voiceAnimate = document.getElementById("voiceAnimate");
-const lightDisplay = document.getElementById("lightDisplay");
+const screenGlare = document.getElementById("screenGlare");
 const pursuit = document.getElementById("pursuit");
 const timeDisplay = new FitFont({ 
   id:'time',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
@@ -90,15 +92,24 @@ messaging.peerSocket.addEventListener("message", (evt) => {
   }
 });
 
+if (BodyPresenceSensor) {
+  body = new BodyPresenceSensor();
+  body.start();
+}
+
 if (HeartRateSensor) {
   hrm = new HeartRateSensor({ frequency: 1 });
-  hrm.start();
-  hrm.addEventListener("reading", () => function(){
-    console.log(hrm.heartRate);
-    let runner = document.getElementById("animateElement").animate();
-    runner.duration(hrm.heartRate / 100);
-    runner.start();
+  hrm.addEventListener("reading", () => {
+    updateHeartRate();
   });
+  hrm.start();
+}
+
+function updateHeartRate() {
+  var dur = (220 - hrm.heartRate) / 100;
+  var animateAttribute = document.getElementById("animateAttribute");
+  animateAttribute.dur = dur;
+  voiceAnimate.animate("enable");
 }
 
 function updateDisplay() {
@@ -108,6 +119,9 @@ function updateDisplay() {
     if(element.id != statDisplay) element.style.opacity = 0.5;
   })
   activeGoal.style.opacity = 1;
+
+  if(body.present) { voiceBox.style.visibility = primaryDisplay.style.visibility; }
+  else { voiceBox.style.visibility = "hidden"; }
 
   // return the cached value if it is less than 30 minutes old 
   weather.fetch(30 * 60 * 1000).then(weather => {
@@ -158,7 +172,7 @@ pursuit.addEventListener("click", (evt) => {
   updateDisplay();
 });
 
-voiceAnimate.addEventListener("click", (evt) => {
+screenGlare.addEventListener("click", (evt) => {
     primaryDisplay.style.visibility = "hidden";
     altDisplay.style.visibility = "visible";
 });
@@ -166,8 +180,6 @@ altDisplay.addEventListener("click", (evt) => {
     altDisplay.style.visibility = "hidden";
     primaryDisplay.style.visibility = "visible";
 });
-
-voiceAnimate.animate("enable");
 
 clock.granularity = "seconds";
 clock.ontick = (evt) => {
@@ -188,4 +200,18 @@ clock.ontick = (evt) => {
   dateDisplayAlt.text = `${now.getMonth() + 1}/${now.getDate()}/${now.getYear() + 1900}`;
 
   updateDisplay();
+  // var delay = Math.random();
+  // voiceAnimate.animate("dur", delay / 100);
+  // voiceAnimate.animate("enable");
+
+}
+
+//animateVoice();
+
+async function animateVoice()
+{
+    var delay = Math.random();
+    voiceAnimate.animate("dur", delay / 100);
+    voiceAnimate.animate("enable");
+    setTimeout(animateVoice, delay);
 }

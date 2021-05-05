@@ -8,7 +8,7 @@
         </symbol>
         <symbol id="voiceSymbol">
           <image id="animateElement" href="voiceOverlay.png">
-                <animate attributeName="opacity" begin="enable" from="0.3" to="0.9" dur="0.7" final="restore" repeatCount="indefinite" />
+                <animate id="animateAttribute" attributeName="opacity" begin="enable" from="0.4" to="0.9" dur="0.7s" final="restore" repeatCount="1" />
           </image>
         </symbol>
 
@@ -16,6 +16,27 @@
 
     <g id="primaryDisplay">
         <image x="0" y="0" width="100%" height="100%" href="Overlay.png" />
+
+        <g id="voiceBox" transform="translate(8,10) scale(0.95,0.95)">
+        <use href="#voice" x="100" y="10" />
+        <use href="#voice" x="100" y="20" />
+        <use href="#voice" x="100" y="30" />
+        <use href="#voice" x="100" y="40" />
+        <use href="#voice" x="100" y="50" />
+        <use href="#voice" x="100" y="60" />
+        <use href="#voice" x="100" y="70" />
+        <use href="#voice" x="100" y="80" />
+        <use href="#voice" x="100" y="90" />
+        <use href="#voice" x="100" y="100" />
+        <use href="#voice" x="100" y="110" />
+        <use href="#voice" x="100" y="120" />
+        <use href="#voice" x="100" y="130" />
+        <use href="#voice" x="100" y="140" />
+        <use href="#voice" x="100" y="150" />
+        <use href="#voice" x="100" y="160" />
+        <use id="voiceAnimate" href="#voiceSymbol" x="100" y="10" width="136" height="158" />
+    </g>
+    <image id="screenGlare" x="0" y="0" width="100%" height="100%" href="ScreenGlare.png" opacity="0.5" pointer-events="visible" />
 
         <image id="ST" class="sideButton" x="15" y="70" width="58" height="36" href="Steps.png" pointer-events="visible" />
         <image id="FL" class="sideButton" x="15" y="130" width="58" height="36" href="Floors.png" pointer-events="visible" />
@@ -28,7 +49,7 @@
 
         <g id="pursuit" pointer-events="visible">
             <g>
-                <rect class="bottomButton" x="100" y="190" width="136" height="36" opacity="0.7" fill="#FFDE38" />
+                <rect class="bottomButton" x="100" y="190" width="134" height="36" opacity="0.7" fill="#FFDE38" />
                 <use href="#fitfont" id="date" x="168" y="211">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -41,7 +62,7 @@
                 </use>
             </g>
             <g>
-                <rect class="bottomButton" x="100" y="235" width="136" height="36" fill="#FFDE38" />
+                <rect class="bottomButton" x="100" y="235" width="134" height="36" fill="#FFDE38" />
                 <use href="#fitfont" id="time" x="168" y="255">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -54,7 +75,7 @@
                 </use>
             </g>
             <g>
-                <rect class="bottomButton" x="100" y="280" width="136" height="36" opacity="0.7" fill="#ADE2FF" />
+                <rect class="bottomButton" x="100" y="280" width="134" height="36" opacity="0.7" fill="#ADE2FF" />
                 <use href="#fitfont" id="goal" x="168" y="301">
                     <use href="#fitfont-char"/>
                     <use href="#fitfont-char"/>
@@ -66,26 +87,6 @@
                     <use href="#fitfont-char"/>
                 </use>
             </g>
-        </g>
-
-        <g transform="translate(8,10) scale(0.95,0.95)">
-            <use href="#voice" x="100" y="10" />
-            <use href="#voice" x="100" y="20" />
-            <use href="#voice" x="100" y="30" />
-            <use href="#voice" x="100" y="40" />
-            <use href="#voice" x="100" y="50" />
-            <use href="#voice" x="100" y="60" />
-            <use href="#voice" x="100" y="70" />
-            <use href="#voice" x="100" y="80" />
-            <use href="#voice" x="100" y="90" />
-            <use href="#voice" x="100" y="100" />
-            <use href="#voice" x="100" y="110" />
-            <use href="#voice" x="100" y="120" />
-            <use href="#voice" x="100" y="130" />
-            <use href="#voice" x="100" y="140" />
-            <use href="#voice" x="100" y="150" />
-            <use href="#voice" x="100" y="160" />
-            <use id="voiceAnimate" href="#voiceSymbol" pointer-events="visible" x="100" y="10" width="136" height="158" />
         </g>
     </g>
 
